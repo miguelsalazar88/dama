@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Panel  extends JPanel {
+public class Panel  extends JPanel{
 
     private Casilla[][] tableroVista = new Casilla[8][8];
 
@@ -19,7 +19,6 @@ public class Panel  extends JPanel {
 
         for (int i = 0; i < tableroVista.length; i++) {
             for (int j = 0; j < tableroVista[0].length; j++) {
-
                 if(tableroVista[i][j].isHayReina()){
                     g.drawString("Q",tableroVista[i][j].getX()+10,tableroVista[i][j].getY()+20);
                     g.setColor(Color.BLACK);
@@ -38,14 +37,12 @@ public class Panel  extends JPanel {
                 }
             }
         }
-
     }
 
-
     //Getters y Setters
-
 
     public void setTableroVista(Casilla[][] tableroVista) {
         this.tableroVista = tableroVista;
     }
+
 }

@@ -1,14 +1,11 @@
 package modelo;
-
 import vista.Ventana;
-
 import java.util.*;
 
 public class Modelo {
 
     private Ventana vista;
     private Casilla[][] tableroModelo = new Casilla[8][8];
-    private Random rnd = new Random();
 
     public Modelo(Ventana vista){
         this.vista = vista;
@@ -32,6 +29,7 @@ public class Modelo {
     }
 
     public void ubicarReina(int fila, int columna){
+
         tableroModelo[fila][columna].setHayReina(true);
         tableroModelo[fila][columna].setCasillaDisponible(false);
         int dif = fila - columna;
@@ -50,7 +48,6 @@ public class Modelo {
 
             }
         }
-
         this.vista.getPanel().setTableroVista(this.tableroModelo);
         this.vista.repaint();
     }
@@ -81,6 +78,7 @@ public class Modelo {
     //Este metodo crea un arraylist que contiene las ubicaciones de las casillas;
 
     public ArrayList<IntPair> crearArray(){
+
         ArrayList<IntPair> lista = new ArrayList<>();
 
         for (int i = 0; i < tableroModelo.length; i++) {
@@ -91,17 +89,10 @@ public class Modelo {
         return lista;
     }
 
-    public void wait(int n){
-        long t0, t1;
-        t0 = System.currentTimeMillis();
-
-        do {
-            t1 = System.currentTimeMillis();
-        } while ((t1 - t0) < n);
-    }
-
     public int numReinas(){
+
         int num = 0;
+
         for (int i = 0; i < tableroModelo.length; i++) {
             for (int j = 0; j < tableroModelo.length; j++) {
                 if(tableroModelo[i][j].isHayReina()){
@@ -128,11 +119,8 @@ public class Modelo {
                 else if(!tableroModelo[i][j].isHayReina()&&tableroModelo[i][j].isCasillaDisponible()){
                     System.out.print("[1]");
                 }
-
             }
             System.out.println();
         }
     }
-
-
 }
