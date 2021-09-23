@@ -9,9 +9,7 @@ public class App {
         Ventana v = new Ventana();
         Modelo m = new Modelo(v);
         Controller c = new Controller(v,m);
-
         m.initTablero();
-        m.ubicarReina(2,5);
-        m.printTablero();
+
     }
 }
