@@ -45,7 +45,6 @@ public class Modelo {
                 if(i+j == sum){
                     tableroModelo[i][j].setCasillaDisponible(false);
                 }
-
             }
         }
         this.vista.getPanel().setTableroVista(this.tableroModelo);
