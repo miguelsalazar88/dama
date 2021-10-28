@@ -20,7 +20,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource().equals(this.vista.getBotonIniciar())){
-            this.vista.getPanel().repaint();
+            this.modelo.setReinas(0,0,this.modelo.crearArray());
         }
 
     }
